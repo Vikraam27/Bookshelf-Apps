@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bookshelf Apps</title>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Bookshelf <span>Apps</span></a>
+        <button class="menu-toggle"></button>
+        <ul class="navigation">
+            <li><a href="/">Home</a></li>
+            <li><a href="#Books">Books</a></li>
+            <li><a href="https://www.dicoding.com/users/vikram27">About us</a></li>
+        </ul>
+    </header>
+    <div class="banner" id="banner">
+        <div class="content">
+            <h1 tabindex="0">Books are my life</h1>
+            <p tabindex="0">For some of us, books are as important as almost anything else on earth. What a miracle it is that out of these small, flat, rigid squares of paper unfolds world after world after world, worlds that sing to you, comfort and quiet or excite you. Books help us understand who we are and how we are to behave. They show us what community and friendship mean; they show us how to live and die.</p>
+            <button class="btn" href="#restaurant">Get Started</button>
+        </div>
+    </div>
+    <main>
+        <section id="Books" class="books">
+           <div class="title_container">
+            <h2>Books</h2>
+            <button id="modalBtn">+ New</button>
+           </div>
+           <div class="filter_container">
+            <input class="search_book" type="search" placeholder="Search book....">
+            <select class="filter">
+                <option value="">All</option>
+                <option value="0">Not finished reading</option>
+                <option value="1">Finished reading</option>
+            </select>
+           </div>
+           <div class="book-container">
+            <!-- book stuff -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright &copy; 2022 Bookshelf Apps || created by Vikram </p>
+    </footer>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Add Book</h3>
+            <span class="close">&times;</span>
+          </div>
+            <form id="form" method="post">
+              <label for="title">Title</label>
+              <input id="title" type="text" placeholder="Title book...." required>
+              <label for="author">Author</label>
+              <input id="author" type="text" placeholder="Book author...." required>
+              <label for="tags">Tags</label>
+              <input id="tags" type="text" placeholder="Book categories, use commas to separate them" required>
+              <label for="year">Year</label>
+              <input id="year" type="number" required>
+              <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div id="toast"></div>
+</body>
+<script src="/js/index.js"></script>
+<script src="/js/dom.js"></script>
+<script src="/js/storage.js"></script>
+</html>

@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+:root {
+  --white : #ffffff;
+  --black : #111111;
+  --primary-color: #270082;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+/* header */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+.menu-toggle{
+  display: none;
+}
+header.sticky {
+  background: var(--white);
+  padding: 10px 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+header > .logo {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2em;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+header.sticky > .logo {
+  color: var(--black);
+}
+header > .logo span {
+  margin-left: 4px;
+  color: #73c7ff;
+}
+header > .navigation{
+  position: relative;
+  display: flex;
+}
+header > .navigation li {
+  list-style: none;
+  margin-left: 30px;
+}
+header > .navigation li a{
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--white);
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+header.sticky > .navigation li a{
+  color: var(--black);
+}
+header > .navigation li a:hover{
+  color: #83cdff;
+  text-decoration: underline;
+}
+/*
+ * Banner
+ *
+ */
+ .banner{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),url('/asset/book_6-wallpaper-1280x720.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner > .content {
+  max-width: 900px;
+  text-align: center;
+  padding: 10px;
+}
+.banner > .content > h1 {
+  margin-bottom: 50px;
+  font-size: 4rem;
+  color: var(--white);
+  font-weight: 600;
+}
+.banner > .content > p {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 300;
+  margin-bottom: 100px;
+  font-style: italic;
+}
+.btn{
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  color: #66c8af;
+  text-decoration: none;
+}
+.btn:hover{
+  box-shadow: 0 3px 10px 1px #73c7ff;
+  transform: translateY(-0.25em);
+  background: #73c7ff;
+  color: black;
+  border: #66c8af;
+}
+.books {
+  margin: 10px;
+}
+.title_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.title_container > button {
+  border: none;
+  border-radius: 10px;
+  background-color: #66c8af;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+/* modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+.modal-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-content > form > input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modal-content > form > input[type=submit] {
+  border: none;
+  border-radius: 10px;
+  background-color: #66c8af;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.book-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter_container{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.search_book{
+  padding: 10px;
+  margin-right: 20px;
+  width: 80%;
+  border-radius: 5px;
+  border-width: 0.2px;
+}
+.filter{
+  width: 20%;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #bacdd8;
+  border-radius: 12px;
+  width: 130px;
+  height: 230px;
+  margin: 15px;
+  padding: 10px;
+}
+.card > .card-img{
+  height: 100%;
+  width: 110px;
+}
+.card > .card-details{
+  margin: 10px 0;
+  text-align: center;
+  font-size: 13px;
+  text-overflow: ellipsis;
+}
+.btn-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn-finish{
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 2px;
+  margin: 0 10px;
+  border-radius: 50%; 
+  font-size: 22px;  
+  cursor: pointer; 
+}
+.btn-unfinish {
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 2px;
+  margin: 0 10px;
+  border-radius: 50%; 
+  font-size: 22px;  
+  cursor: pointer; 
+}
+
+.btn-trash{
+  background-color: transparent;
+  border: none;
+  color: black;
+  padding: 2px;
+  margin: 0 10px;
+  border-radius: 50%; 
+  font-size: 20px;  
+  cursor: pointer; 
+}
+
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#toast.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.empty-book{
+  margin: 100px auto;
+  text-align: center;
+}
+footer{
+  background:#333;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+@media screen and (max-width: 900px) {
+  /*
+  * Header
+  *
+  */
+  header > .logo{
+    font-size: 1.6em;
+  }
+  header, header.sticky {
+      padding: 10px 20px;
+  }
+  header.sticky .menu-toggle{
+      filter: invert(1);
+  }
+  header > .navigation{
+      display: none;
+  }
+  header > .navigation.active{
+      width: 100%;
+      height: calc(100% - 60px);
+      position: fixed;
+      top: 60px;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: var(--white);
+  }
+  header > .navigation li {
+      margin-left: 0;
+  }
+  header > .navigation li a{
+      color: var(--black);
+      font-size: 1.6rem;
+  }
+  .menu-toggle{
+      display: block;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      background: url('/asset/menu.png');
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      border: none;
+      -webkit-appearance: none;
+  }
+  .menu-toggle.active{
+      background: url('/asset/close.png');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+  /*
+  * Banner
+  *
+  */
+  .banner > .content > h1 {
+      font-size: 2.5rem;
+  }
+  .banner > .content > p {
+      font-size: 1rem;
+  }
+  .book-container{
+    align-items: center;
+  }
+
+  .filter_container{
+    margin-right: 5px;
+  }
+  .search_book{
+    width: 60%;
+  }
+  .filter{
+    width: 40%;
+  }
+  footer > p{
+    font-size: 13px;
+  }
+}
