@@ -36,10 +36,9 @@ const addBook = () => {
 
   const data = composeTodoObject(titleVal, auhtorVal, tagsVal, yearVal);
   
-  const container = document.querySelector(".book-container");
-  container.innerHTML += bookCardTemplate(data);
   books.push(data);
   updateDataFromLocalStorage();
+  document.dispatchEvent(new Event("onDataLoaded"));
   showToast("Successfully added  book");
 };
 
